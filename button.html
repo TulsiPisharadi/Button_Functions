@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Button</title>
+</head>
+<body style="background-color: bisque;">
+<center>
+  <h1 style="font-family: Georgia, 'Times New Roman', Times, serif;">Button Click Counter</h1>
+  <button id="clickButton" onclick="handleButtonClick()">Click here</button>
+  <p id="count">Number of clicks: 0</p>
+</center>
+  <script>
+    let count = 0;
+
+    function handleButtonClick() {
+      count++;
+      document.getElementById('count').innerHTML = `Number of clicks: ${count}`;
+      changecolor();
+    }
+    function changecolor() {
+      const button = document.getElementById('clickButton');
+      const colors = ['green', 'blue', 'orange','rose','red','brown'];
+      const newColor = colors[count % colors.length];
+      button.style.backgroundColor = newColor;
+    }
+  </script>
+</body>
+</html>
